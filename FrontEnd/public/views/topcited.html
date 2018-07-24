@@ -1,0 +1,79 @@
+<div ui-content-for="title">
+  <span>Top Cited</span>
+</div>
+
+<div ng-controller="TopCitedCtrl" class="scrollable">
+    <div id="searchpaper">
+      <form name="channelInput">
+        <div style="float:left;">
+          <input name="channelname" class="form-control" autocomplete="off" ng-model="channelname" placeholder="Publication Channel"/>
+        </div>
+        <span class="input-group-btn" style="float:left;">
+          <button  type="button" class="btn btn-success" ng-click="search()">Search</button>
+        </span>
+      </form>
+    </div>
+
+    <div>
+	    <table border="1" class="table table-hover" style= "white-space:pre-wrap;">
+	        <col width="130">
+	        <tr>
+	            <th bgcolor="#FFFFFF">Top Cited Papers</th>
+	            <td class = "papers" bgcolor="#FFFFFF">{{papers}}</td>
+	        </tr>
+	    </table> 
+    </div>
+
+    <div id="searchpaper2">
+      <form name="channelInput2">
+        <div style="float:left;">
+          <input name="channelname2" class="form-control" autocomplete="off" ng-model="channelname2" placeholder="Publication Channel"/>
+        </div>
+        <div style="float:left;">
+          <input name="year" class="form-control" autocomplete="off" ng-model="year" placeholder="Year"/>
+        </div>
+        <span class="input-group-btn" style="float:left;">
+          <button  type="button" class="btn btn-success" ng-click="search2()">Search</button>
+        </span>
+      </form>
+    </div>
+
+    <div>
+      <table border="1" class="table table-hover" style= "white-space:pre-wrap;">
+          <col width="130">
+          <tr>
+              <th bgcolor="#FFFFFF">Top Cited Papers</th>
+              <td class = "papers" bgcolor="#FFFFFF">{{papers2}}</td>
+          </tr>
+      </table> 
+    </div>
+
+    <div id="searchpaper3">
+      <form name="channelInput3">
+        <div style="float:left;">
+          <input name="channelname3" class="form-control" autocomplete="off" ng-model="channelname3" placeholder="Publication Channel"/>
+        </div>
+        <div style="float:left;">
+          <input name="startyear" class="form-control" autocomplete="off" ng-model="startyear" placeholder="Start Year"/>
+        </div>
+        <div style="float:left;">
+          <input name="endyear" class="form-control" autocomplete="off" ng-model="endyear" placeholder="End Year"/>
+        </div>
+        <span class="input-group-btn" style="float:left;">
+          <button  type="button" class="btn btn-success" ng-click="search3()">Search</button>
+        </span>
+      </form>
+    </div>
+
+    <div>
+      <table border="1" class="table table-hover" style= "white-space:pre-wrap;">
+          <col width="130">
+          <tr>
+              <th bgcolor="#FFFFFF">Top Cited Papers</th>
+              <td class = "papers" bgcolor="#FFFFFF">{{papers3}}</td>
+          </tr>
+      </table> 
+    </div>
+
+</div>
+

@@ -1,0 +1,20 @@
+<div ui-content-for="title">
+    <span>Topk_Paper_Network</span>
+</div>
+
+<div ng-controller="topKRelatedCtrl" class="scrollable" style="background-color:white;">
+
+    <div id="searchauthor">
+        <form name="keywordsInput">
+            <div style="float:left;">
+                <input name="Key Words" class="form-control" autocomplete="off" ng-model="keywords" placeholder="Key Words"/>
+            </div>
+        <span class="input-group-btn" style="float:left;">
+          <button  type="button" class="btn btn-success" ng-click="generate()">Generate</button>
+        </span>
+        </form>
+    </div>
+    <div>
+        <nvd3 options="options" data="data" class="with-3d-shadow with-transitions"></nvd3>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+Dynamic Exception Handling Based on Web Services and OPC XML-DA.
+A XML-based Description Language and Execution Environment for Orchestrating Grid Jobs.
+Exploiting XML Schema for Interpreting XML Documents as RDF.
+Managing Trust in Active XML.

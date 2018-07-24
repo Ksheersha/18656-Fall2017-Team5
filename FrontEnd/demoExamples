@@ -1,0 +1,14 @@
+Incomplete Information in Multidimensional Databases.
+
+Match (a : Author) where a.authorName='Jia Zhang' remove a.password,a.visited
+
+MATCH ()-[r:FOLLOW]-() 
+DELETE r
+
+MATCH ()-[r:INTERESTED_IN]-() 
+DELETE r
+
+netstat -anp tcp | grep 9000
+
+lsof -i tcp:9000
+

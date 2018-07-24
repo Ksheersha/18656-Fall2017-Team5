@@ -1,0 +1,39 @@
+  <div ui-content-for="title">
+    <span>Follow Researchers</span>
+  </div>
+
+  <div ng-controller="FollowCtrl" class="scrollable" style="background-color:grey;">
+
+    <div id="followresearcher">
+      <form name="followInput">
+        <div style="float:left;">
+          <input name="authorName" class="form-control" autocomplete="off" ng-model="authorname" placeholder="Author Name"/>
+        </div>
+        <span class="input-group-btn" style="float:left;">
+          <button  type="button" class="btn btn-success" ng-click="follow()">Follow</button>
+        </span>
+      </form>
+    </div>
+
+    <br></br>
+    <br></br>
+    <br></br>
+
+    <div id="searchauthor">
+      <form name="authorInput">
+        <div style="float:left;">
+          <input name="author" class="form-control" autocomplete="off" ng-model="author" placeholder="Author Name"/>
+        </div>
+        <span class="input-group-btn" style="float:left;">
+          <button  type="button" class="btn btn-warning" ng-click="search()">Search</button>
+        </span>
+      </form>
+      <br></br>
+      <br></br>
+      <br></br>
+      <h3>{{following}}</h3>
+      <h3 style="color:white">{{visit}}</h3>
+    </div>
+
+
+  </div>

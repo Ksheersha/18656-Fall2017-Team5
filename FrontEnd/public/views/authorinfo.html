@@ -1,0 +1,105 @@
+<div ui-content-for="title">
+  <span>Author Information</span>
+</div>
+
+<div ng-controller="AuthorInfoCtrl" class="scrollable">
+    <div id="searchauthor">
+      <form name="authorInput">
+        <div style="float:left;">
+          <input name="authorName" class="form-control" autocomplete="off" ng-model="authorname" placeholder="Author Name"/>
+        </div>
+        <span class="input-group-btn" style="float:left;">
+          <button  type="button" class="btn btn-success" ng-click="search()">Search</button>
+        </span>
+      </form>
+    </div>
+
+    <div>
+	    <table border="1" class="table table-hover">
+	        <col width="130">
+	        <tr>
+	            <th bgcolor="#FFFFFF">Name</th>
+	            <td class = "fullName" bgcolor="#FFFFFF">{{name}}</td>
+	        </tr>
+	        <tr>
+	            <th bgcolor="#FFFFFF">Email</th>
+	            <td class = "email" bgcolor="#FFFFFF">{{email}}</td>
+	        </tr>
+	        <tr>
+	            <th bgcolor="#FFFFFF">Affiliation</th>
+	            <td class = "affiliation" bgcolor="#FFFFFF">{{affiliation}}</td>
+	        </tr>
+	        <tr>
+	            <th bgcolor="#FFFFFF">Homepage</th>
+	            <td class = "homepage" bgcolor="#FFFFFF">{{homepage}}</td>
+	        </tr>
+	        <tr>
+	            <th bgcolor="#FFFFFF">Picture</th>
+	            <td class = "picture" bgcolor="#FFFFFF">{{picture}}</td>
+	        </tr>
+	        <tr>
+	            <th bgcolor="#FFFFFF">Interests</th>
+	            <td class = "interests" bgcolor="#FFFFFF">{{interests}}</td>
+	        </tr>
+	    </table> 
+    </div>
+
+    <h3 style="color:white">{{visit}}</h3>
+
+    <div>
+      <form name="searchcoauthor">
+        <div class="input-group">
+          
+          <div style="float:left;">
+            <input name="authorName1" class="form-control" autocomplete="off" ng-model="authorname1" placeholder="Author A Name"/>
+          </div>
+          <div style="float:left;">
+            <input name="authorName2" class="form-control" autocomplete="off" ng-model="authorname2" placeholder="Author B Name"/>
+          </div>
+
+          <span class="input-group-btn" style="float:left;">
+            <button  type="button" class="btn btn-warning" ng-click="searchCollaboration()">Search</button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <table border="1" class="table table-hover" style= "white-space:pre-wrap;">
+          <col width="130">
+          <tr>
+              <th bgcolor="#FFFFFF">Collaboration</th>
+              <td class = "collaboration" bgcolor="#FFFFFF">{{collaboration}}</td>
+          </tr>
+      </table> 
+    </div>
+
+
+    <div id="authornetwork">
+      <form name="authorInput">
+        <div style="float:left;">
+          <input name="author1" class="form-control" autocomplete="off" ng-model="author1" placeholder="Author A Name"/>
+        </div>
+        <div style="float:left;">
+          <input name="author2" class="form-control" autocomplete="off" ng-model="author2" placeholder="Author B Name"/>
+        </div>
+        <span class="input-group-btn" style="float:left;">
+          <button  type="button" class="btn btn-primary" ng-click="findPath()">Find Path</button>
+        </span>
+      </form>
+    </div>
+
+    <div>
+      <table border="1" class="table table-hover" style= "white-space:pre-wrap;">
+          <col width="130">
+          <tr>
+              <th bgcolor="#FFFFFF">Path</th>
+              <td class = "experts" bgcolor="#FFFFFF">{{path}}</td>
+          </tr>
+      </table> 
+    </div>
+</div>
+
+
+ </div>
+</div>

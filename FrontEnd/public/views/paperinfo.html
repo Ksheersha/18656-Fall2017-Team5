@@ -1,0 +1,40 @@
+<div ui-content-for="title">
+  <span>Paper Information</span>
+</div>
+
+<div ng-controller="PaperInfoCtrl" class="scrollable">
+    <div id="searchPaper">
+      <form name="paperInput">
+        <div class="input-group">
+          <input name="title" class="form-control" autocomplete="off" ng-model="title" placeholder="Paper Title"/>
+
+          <span class="input-group-btn">
+            <button  type="button" class="btn btn-success" ng-click="searchAuthor()">Search Authors</button>
+            <button  type="button" class="btn btn-warning" ng-click="searchCitation()">Search Citation</button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    <p></p>
+    <p></p>
+    <p></p>
+    <div>
+	    <table border="1" class="table table-hover" style= "white-space:pre-wrap;">
+	        <col width="130">
+	        <tr>
+	            <th bgcolor="#FFFFFF">Authors</th>
+	            <td class = "authors" bgcolor="#FFFFFF">{{authors}}</td>
+	        </tr>
+	        <tr>
+	            <th bgcolor="#FFFFFF">Citations</th>
+	            <td class = "citations" bgcolor="#FFFFFF">{{citations}}</td>
+	        </tr>
+	    </table> 
+    </div>
+
+    <h3 style="color:white">{{visit}}</h3>
+
+</div>
+ </div>
+</div>

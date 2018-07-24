@@ -1,0 +1,16 @@
+@(title: String, list: List[String])
+<!DOCTYPE html>
+<html lang="en">
+    <header>
+        <title>Play</title>
+    </header>
+
+    <body>
+    <p><strong>@(title) </strong> refers to : </p>
+    <ul>
+        @for(paper <- list) {
+        <li>@paper</li>
+        }
+    </ul>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+  <div ui-content-for="title">
+    <span>Geographical Info</span>
+  </div>
+
+  <div ng-controller="MapCtrl as vm" class="scrollable">
+
+    <div>
+      <form name="distribution">
+        <div class="input-group">
+          
+          <div style="float:left;">
+            <input name="country" class="form-control" autocomplete="off" ng-model="country" placeholder="Country"/>
+          </div>
+          <div style="float:left;">
+            <input name="topic" class="form-control" autocomplete="off" ng-model="topic" placeholder="Topic"/>
+          </div>
+
+          <span class="input-group-btn" style="float:left;">
+            <button  type="button" class="btn btn-success" ng-click="generate1()">Generate</button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    <br></br>
+
+    <div>
+      <form name="distribution">
+        <div class="input-group">
+          
+          <div style="float:left;">
+            <input name="channelname" class="form-control" autocomplete="off" ng-model="channelname" placeholder="Channel Name"/>
+          </div>
+          <div style="float:left;">
+            <input name="startyear" class="form-control" autocomplete="off" ng-model="startyear" placeholder="Start Year"/>
+          </div>
+          <div style="float:left;">
+            <input name="endyear" class="form-control" autocomplete="off" ng-model="endyear" placeholder="End Year"/>
+          </div>
+
+          <span class="input-group-btn" style="float:left;">
+            <button  type="button" class="btn btn-warning" ng-click="generate2()">Generate</button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    <br></br>
+
+    <div>
+      <div google-chart chart="chart"></div>
+    </div>
+
+  </div>

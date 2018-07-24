@@ -1,0 +1,41 @@
+// AuthorIndex,Author
+// Create authors
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:/author.csv" AS row
+CREATE (:Author {authorName: row.Author, index: row.AuthorIndex});
+
+
+// u'index', u'title',u'year',u'mdate',u'key',u'page',u'volume',u'journal', u'number',u'ee',u'url'
+// Create papers
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:/paper_final.csv" AS row
+CREATE (:Paper {index: row.index, title: row.title, abstract: row.abstract, year: row.year, mdate: row.mdate, key: row.key, page: row.page, volume: row.volume, journal: row.journal, number: row.number, ee: row.ee, url: row.url});
+
+// Create keywords
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:/keyword.csv" AS row
+CREATE (:Keyword {index: row.keywordIndex, keyword: row.keyword});
+
+CREATE INDEX ON :Paper(index);
+
+CREATE INDEX ON :Author(index);
+
+CREATE INDEX ON :Keyword(index);
+
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:/paper_author.csv" AS row
+MATCH (paper:Paper {index: row.paperIndex})
+MATCH (author:Author {index: row.AuthorIndex})
+MERGE (author)-[:WRITES]->(paper);
+
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:/paper_citation.csv" AS row
+MATCH (paper:Paper {index: row.paperIndex})
+MATCH (citation:Paper {index: row.citationIndex})
+MERGE (paper)-[:REFERS_TO]->(citation);
+
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:/paper_keyword.csv" AS row
+MATCH (paper:Paper {index: row.paperIndex})
+MATCH (keyword:Keyword {index: row.keywordIndex})
+MERGE (paper)-[:HAS_KEYWORD]->(keyword);

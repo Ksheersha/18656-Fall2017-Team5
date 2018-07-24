@@ -1,0 +1,21 @@
+  <div ui-content-for="title">
+    <span>Journal Information</span>
+  </div>
+
+  <div ng-controller="JournalCtrl" class="scrollable">
+
+    <div id="searchjournal">
+      <form name="journalInput">
+        <div style="float:left;">
+          <input name="journalName" class="form-control" autocomplete="off" ng-model="journalname" placeholder="Journal Name"/>
+        </div>
+        <span class="input-group-btn" style="float:left;">
+          <button  type="button" class="btn btn-success" ng-click="generate()">Generate</button>
+        </span>
+      </form>
+    </div>
+
+    <div class="scrollable-content section">
+      <nvd3 options="options" data="data"></nvd3>
+    </div>
+  </div>

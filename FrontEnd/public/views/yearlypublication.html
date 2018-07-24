@@ -1,0 +1,29 @@
+  <div ui-content-for="title">
+    <span>Yearly Publication</span>
+  </div>
+  <div ng-controller="YearlyPubCtrl" class="scrollable">
+
+    <div>
+      <form name="searchcoauthor">
+        <div class="input-group">
+          
+          <div style="float:left;">
+            <input name="authorName" class="form-control" autocomplete="off" ng-model="authorname" placeholder="Author Name"/>
+          </div>
+          <div style="float:left;">
+            <input name="startYear" class="form-control" autocomplete="off" ng-model="startyear" placeholder="Start Year"/>
+          </div>
+          <div style="float:left;">
+            <input name="endYear" class="form-control" autocomplete="off" ng-model="endyear" placeholder="End Year"/>
+          </div>
+
+          <span class="input-group-btn" style="float:left;">
+            <button  type="button" class="btn btn-warning" ng-click="generate()">Generate</button>
+          </span>
+        </div>
+      </form>
+    </div>
+    <div class="scrollable-content section">
+      <nvd3 options="options" data="data"></nvd3>
+    </div>
+  </div>

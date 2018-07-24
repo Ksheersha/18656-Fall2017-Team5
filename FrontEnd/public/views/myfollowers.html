@@ -1,0 +1,47 @@
+    <div ui-content-for="title">
+                    <span>My Followers</span>
+                </div>
+                <style>
+                    table {
+                        border-spacing: 0;
+                        width: 100%;
+                        border: 1px solid #ccc;
+                    }
+
+                    th, td {
+                        text-align: left;
+                        padding: 8px;
+                    }
+
+                </style>
+
+                <div ng-controller="MyFollowCtrl" class="scrollable" >
+                    <div id="searchauthor">
+                            <span class="input-group-btn">
+                                <p align="center">
+                          <button  type="button" class="btn btn-warning"style="height:50px; width:100px;margin:auto;display:block" ng-click="search()">{{username}}</button>
+                                </p>
+                        </span>
+                        <br></br>
+                        <h2>{{follower}}</h2>
+                        <div style="overflow-x:auto;">
+                        <table class="panel panel-default" ng-repeat="topic in topics">
+                            <tr>
+                                <th style="padding-right: 10px">Author Name</th>
+                                <td style="padding-right: 10px">{{topic.name}}</td>
+                                <th style="padding-right: 10px">Homepage</th>
+                                <td style="padding-right: 10px">{{topic.homepage}}</td>
+                                <th style="padding-right: 10px">Picture</th>
+                                <td style="padding-right: 10px">{{topic.picture}}</td>
+                                <th style="padding-right: 10px">Interests</th>
+                                <td style="padding-right: 10px">{{topic.interests}}</td>
+                                <th style="padding-right: 10px">Email</th>
+                                <td style="padding-right: 10px">{{topic.email}}</td>
+                                <th style="padding-right: 10px">Affiliation</th>
+                                <td style="padding-right: 10px">{{topic.affiliation}}</td>
+                            </tr>
+                        </table>
+                        </div>
+                     </div>
+                </div>
+    </div>

@@ -1,0 +1,29 @@
+<div ng-controller="sidebarLeftCtrl" class="scrollable">
+  <h1 class="scrollable-header app-name">{{username}}</h1>
+  <div class="scrollable-content">
+    <div class="list-group" ui-turn-off="uiSidebarLeft">
+      <a class="list-group-item" href="#/" ng-show="!loggedin">Login <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/authorinfo" ng-show="loggedin">Author Information<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/paperinfo" ng-show="loggedin">Paper Information<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/yearlypublication" ng-show="loggedin">Yearly Publication<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/journal" ng-show="loggedin">Journal Information<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/collaboration" ng-show="loggedin">Collaboration Network<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/search" ng-show="loggedin">Topics Information<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/publication" ng-show="loggedin">Publication List<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/categorize" ng-show="loggedin">Categorize Papers<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/publish" ng-show="loggedin">Publish Paper<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/follow" ng-show="loggedin">Follow Researchers<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/myfollowers" ng-show="loggedin">My Followers<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/topcited" ng-show="loggedin">Top Cited<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/map" ng-show="loggedin">Geographical Info<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/collaborationNetwork" ng-show="loggedin">Author Network<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/papertopaper" ng-show="loggedin">Paper to Paper<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/persontoperson" ng-show="loggedin">Person to Person<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/persontopaper" ng-show="loggedin">Person to Paper<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/topKrelatedPaper" ng-show="loggedin">TopKPaper Network<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/interestedpaper" ng-show="loggedin">Interested Paper<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/authorspath" ng-show="loggedin">Author's Shortest Path<i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/settings" ng-show="loggedin">Settings<i class="fa fa-chevron-right pull-right"></i></a>
+    </div>
+  </div>
+</div>

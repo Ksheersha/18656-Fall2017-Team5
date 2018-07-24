@@ -1,0 +1,15 @@
+{
+  "name": "sosecommunity",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "socket.io-client": "^1.4.8",
+    "ui.bootstrap": "^2.1.4",
+    "angular-bootstrap": "^2.1.4",
+    "angular-route": "latest",
+    "angular-md5": "^0.1.10",
+    "mobile-angular-ui": "latest",
+    "angular-nvd3": "latest",
+    "angular-google-chart": "^0.1.0"
+  }
+}

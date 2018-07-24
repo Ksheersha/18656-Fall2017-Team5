@@ -1,0 +1,65 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET    /getAuthorInfo/:name    controllers.AuthorInfoController.getAuthorInfo(name : String)
+GET    /getAuthorByPaper/:title      controllers.PaperInfoController.getAuthorByPaper(title : String)
+GET    /getPaperInfo/:name     controllers.PaperInfoController.getPaperInfo(name : String)
+GET     /getCoauthorInfo/:names     controllers.AuthorCoauthorController.getCoauthorInfo(names : String)
+GET    /getAuthorPaperByYear/:name/:yearS/:yearE   controllers.AuthorPaperByYearController.getAuthorPaperByYear(name : String, yearS : String, yearE : String)
+GET    /getAuthorDirNetwork/:name  controllers.AuthorDirNetworkController.getAuthorNetworkByName(name : String)
+GET    /getJournalContributor/:journal   controllers.ContributorsToJournalController.getContributorsByJournal(journal: String)
+
+
+GET    /authenticate/:name/:password    controllers.LogInOutController.authenticate(name : String, password : String)
+POST   /register/:name/:password	controllers.LogInOutController.register(name : String, password : String)
+POST   /login/:name    controllers.LogInOutController.login(name : String)
+
+GET    /searchExperts/:keywords       controllers.SearchController.searchExperts(keywords : String)
+GET    /searchExpertInterests/:keywords/:interests       controllers.SearchController.searchExpertInterests(keywords : String, interests : String)
+GET    /searchTopics/:channel/:year       controllers.SearchController.searchTopics(channel : String, year : String)
+GET    /searchPaper/:title       controllers.SearchController.searchPaper(title : String)
+
+POST  /addFollowers/:myName/:otherName controllers.FollowingRelationshipController.addFollowers(myName: String, otherName: String)
+GET   /getFollowers/:name  controllers.FollowingRelationshipController.getFollowers(name: String)
+GET   /getMyFollowers/:name  controllers.FollowingRelationshipController.getMyFollowers(name: String)
+
+POST  /publishPaper/:title/:year/:authors/:journal/:volume controllers.PublishNewPaperController.addNewPapers(title: String, year: String, authors: String, journal: String, volume: String)
+GET   /getNotification/:name controllers.PublishNewPaperController.getNotifications(name: String)
+
+GET  /getTopCitedPaperByJournal/:journal     controllers.PaperInfoController.getTopCitedPaperByJournal(journal : String)
+GET  /getTopCitedPaperByJournalAndYear/:journal/:year controllers.PaperInfoController.getTopCitedPaperByJournalAndYear(journal: String, year : String)
+
+POST /addRelatedRelationship/:relatedItem/:category   controllers.RecommendationController.addRelatedRelationship(relatedItem : String, category: String)
+GET  /getRecommendation/:name/:category   controllers.RecommendationController.getRecommendation(name : String, category: String)
+
+GET    /researchTeam/:keyword      controllers.TeamFormController.formTeam(keyword : String)
+GET    /linkKeywords/:keyword1/:keyword2      controllers.NetworkController.getKeywordsNetwork(keyword1 : String, keyword2 : String)
+GET    /researcherPath/:name1/:name2         controllers.NetworkController.getAuthorsController(name1 : String, name2 : String)
+
+GET    /collaborationNetwork/:name1          controllers.MultiCollaborationNetworkController.getcollaborationNetwork(name1: String)
+GET    /topKrelatedPaper/:keywords           controllers.TopKRelatedPaperController.getTopKRelatedPaper(keywords: String)
+GET    /InterestedPapers/:keywords/:readername           controllers.CollRelatedPapersController.getCollRelatedPapers(keywords: String, readername: String)
+
+GET    /keywordEvolution/:journal/:startYear/:endYear       controllers.KeywordEvolutionController.getkeywordEvolution(journal: String, startYear: String, endYear: String)
+GET    /categorizeByTimestamp/:startYear/:endYear       controllers.CategorizeByTimestampController.getCategorizeByTime(startYear: String, endYear: String)
+GET    /advancedCategorize/:startYear/:endYear/:channel/:keywords controllers.AdvancedCategorizeController.getAdvancedCategorize(startYear: String, endYear: String, channel: String, keywords: String)
+GET    /getShortestPath/:name1/:name2     controllers.RecommendationController.getShortestPath(name1:String, name2: String)
+
+GET    /countryContributorInTopic/:country/:keyword     controllers.GeoLocationController.countryContributorInTopic(country:String, keyword:String)
+GET    /countryContributorInChannel/:channelName/:startYear/:endYear     controllers.GeoLocationController.countryContributorInChannel(channelName:String, startYear:String, endYear:String)
+
+GET     /network/persontoperson       controllers.NetworkController.personToPersonNetwork
+GET     /network/papertoperson      controllers.NetworkController.paperToPersonNetwork
+GET     /network/papertopaper       controllers.NetworkController.paperToPaperNetwork
+GET     /network/authorShortestPath     controllers.NetworkController.shortestPath(firstAuthor : String, secondAuthor : String)

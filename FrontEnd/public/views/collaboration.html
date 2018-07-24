@@ -1,0 +1,22 @@
+  <div ui-content-for="title">
+    <span>Collaboration Network</span>
+  </div>
+
+  <div ng-controller="CollaborationCtrl" class="scrollable" style="background-color:white;">
+
+    <div id="searchauthor">
+      <form name="authorInput">
+        <div style="float:left;">
+          <input name="authorName" class="form-control" autocomplete="off" ng-model="authorname" placeholder="Author Name"/>
+        </div>
+        <span class="input-group-btn" style="float:left;">
+          <button  type="button" class="btn btn-success" ng-click="generate()">Generate</button>
+        </span>
+      </form>
+    </div>
+    <br></br>
+    <h3 style="color:black">{{visit}}</h3>
+    <div>
+    <nvd3 options="options" data="data" class="with-3d-shadow with-transitions"></nvd3>
+    </div>
+  </div>

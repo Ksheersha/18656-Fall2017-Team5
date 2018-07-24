@@ -1,0 +1,40 @@
+<div ui-content-for="title">
+  <span>Publish Paper</span>
+</div>
+
+<div ng-controller="PublishCtrl" class="scrollable" style="background-color:white;">
+    <div>
+      <form name="publishpaper">
+        <div class="input-group">
+          
+          <div style="float:left;">
+            <input name="title" class="form-control" autocomplete="off" ng-model="title" placeholder="Paper Title"/>
+          </div>
+          <div style="float:left;">
+            <input name="authornames" class="form-control" autocomplete="off" ng-model="authornames" placeholder="Author Names"/>
+          </div>
+          <div style="float:left;">
+            <input name="year" class="form-control" autocomplete="off" ng-model="year" placeholder="Year"/>
+          </div>
+          <div style="float:left;">
+            <input name="journal" class="form-control" autocomplete="off" ng-model="journal" placeholder="Journal"/>
+          </div>
+          <div style="float:left;">
+            <input name="volume" class="form-control" autocomplete="off" ng-model="volume" placeholder="Volume"/>
+          </div>
+          <span class="input-group-btn" style="float:left;">
+            <button  type="button" class="btn btn-warning" ng-click="publish()">Publish</button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <h4>{{published}}</h4>
+    </div>
+
+</div>
+
+
+ </div>
+</div>

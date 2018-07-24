@@ -1,0 +1,52 @@
+  <div ui-content-for="title">
+    <span>Categorize Papers</span>
+  </div>
+
+  <div ng-controller="CategorizeCtrl" class="scrollable">
+
+    <div class="scrollable-content">
+
+      <div id="categorize">
+        <form name="categorizeInput">
+          <div style="float:left;">
+            <input name="startyear" class="form-control" autocomplete="off" ng-model="startyear" placeholder="Start Year"/>
+          </div>
+          <div style="float:left;">
+            <input name="endyear" class="form-control" autocomplete="off" ng-model="endyear" placeholder="End Year"/>
+          </div>
+          <div style="float:left;">
+            <input name="channel" class="form-control" autocomplete="off" ng-model="channel" placeholder="Channel (Optional)"/>
+          </div>
+          <div style="float:left;">
+            <input name="keywords" class="form-control" autocomplete="off" ng-model="keywords" placeholder="Keywords (Optional)"/>
+          </div>
+          <span class="input-group-btn" style="float:left;">
+            <button  type="button" class="btn btn-success" ng-click="categorize()">Categorize</button>
+          </span>
+        </form>
+      </div>
+      <br></br>
+      <br></br>
+      <div class="section">
+        <div class="panel-group" ui-shared-state="myAccordion" >
+
+          <div class="panel panel-default" ng-repeat="topic in topics">
+            <div class="panel-heading" ui-set="{'myAccordion': topic.id}">
+          
+              <h4 class="panel-title">
+                  {{topic.name}}
+              </h4>
+            </div>
+
+            <div ui-if="myAccordion == {{topic.id}}">
+              <div class="panel-body"  style="max-height:150px;overflow-y: scroll;white-space:pre-line">
+                {{topic.papers}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>

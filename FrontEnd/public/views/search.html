@@ -1,0 +1,136 @@
+
+
+  <div ng-controller="SearchCtrl" class="scrollable">
+    <div ui-content-for="title">
+    <span>Topics Information : User - {{username}} Interests: {{interests}}</span>
+  </div>
+	<div class="scrollable-content">
+    <div id="searchexpert">
+      <form name="searchInput">
+        <div style="float:left;">
+          <input name="searchkeyword" class="form-control" autocomplete="off" ng-model="searchkeyword" placeholder="Keyword"/>
+        </div>
+        <span class="input-group-btn" style="float:left;">
+          <button  type="button" class="btn btn-success" ng-click="searchExpert()">Search Experts</button>
+          <button  type="button" class="btn btn-info" ng-click="searchExpertInterest()">Search Experts by their Interests</button>
+        </span>
+      </form>
+    </div>
+
+    <div>
+      <table border="1" class="table table-hover" style= "white-space:pre-wrap;">
+          <col width="130">
+          <tr>
+              <th bgcolor="#FFFFFF">Experts</th>
+              <td class = "experts" bgcolor="#FFFFFF">{{experts}}</td>
+          </tr>
+      </table> 
+    </div>
+
+
+    <div>
+      <form name="searchtopics">
+        <div class="input-group">
+          
+          <div style="float:left;">
+            <input name="searchchannel" class="form-control" autocomplete="off" ng-model="searchchannel" placeholder="Channel Name"/>
+          </div>
+          <div style="float:left;">
+            <input name="searchyear" class="form-control" autocomplete="off" ng-model="searchyear" placeholder="Year"/>
+          </div>
+
+          <span class="input-group-btn" style="float:left;">
+            <button  type="button" class="btn btn-warning" ng-click="searchTopic()">Search Topics</button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <table border="1" class="table table-hover" style= "white-space:pre-wrap;">
+          <col width="130">
+          <tr>
+              <th bgcolor="#FFFFFF">Topics</th>
+              <td class = "topics" bgcolor="#FFFFFF">{{topics}}</td>
+          </tr>
+      </table> 
+    </div>
+
+    <div id="formteam">
+      <form name="topicInput">
+        <div style="float:left;">
+          <input name="topic" class="form-control" autocomplete="off" ng-model="topic" placeholder="Research Topic"/>
+        </div>
+        <span class="input-group-btn" style="float:left;">
+          <button  type="button" class="btn btn-info" ng-click="formTeam()">Form Team</button>
+        </span>
+      </form>
+    </div>
+
+    <div>
+      <table border="1" class="table table-hover" style= "white-space:pre-wrap;">
+          <col width="130">
+          <tr>
+              <th bgcolor="#FFFFFF">Team Members</th>
+              <td class = "experts" bgcolor="#FFFFFF">{{members}}</td>
+          </tr>
+      </table> 
+    </div>
+
+    <div id="keywordnetwork">
+      <form name="keywordInput">
+        <div style="float:left;">
+          <input name="keyword1" class="form-control" autocomplete="off" ng-model="keyword1" placeholder="Keyword 1"/>
+        </div>
+        <div style="float:left;">
+          <input name="keyword2" class="form-control" autocomplete="off" ng-model="keyword2" placeholder="Keyword 2"/>
+        </div>
+        <span class="input-group-btn" style="float:left;">
+          <button  type="button" class="btn btn-danger" ng-click="findLink()">Find Link</button>
+        </span>
+      </form>
+    </div>
+
+    <div>
+      <table border="1" class="table table-hover" style= "white-space:pre-wrap;">
+          <col width="130">
+          <tr>
+              <th bgcolor="#FFFFFF">Link</th>
+              <td class = "experts" bgcolor="#FFFFFF">{{link}}</td>
+          </tr>
+      </table> 
+    </div>
+
+    <div>
+      <form name="searchevolution">
+        <div class="input-group">
+          
+          <div style="float:left;">
+            <input name="channel" class="form-control" autocomplete="off" ng-model="channel" placeholder="Channel Name"/>
+          </div>
+          <div style="float:left;">
+            <input name="startyear" class="form-control" autocomplete="off" ng-model="startyear" placeholder="Start Year"/>
+          </div>
+          <div style="float:left;">
+            <input name="endyear" class="form-control" autocomplete="off" ng-model="endyear" placeholder="End Year"/>
+          </div>
+
+          <span class="input-group-btn" style="float:left;">
+            <button  type="button" class="btn btn-primary" ng-click="showEvolution()">Topic Evolution</button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <table border="1" class="table table-hover" style= "white-space:pre-wrap;">
+          <col width="100">
+          <tr>
+              <th bgcolor="#FFFFFF">Topics</th>
+              <td class = "topics" bgcolor="#FFFFFF">{{evolution}}</td>
+          </tr>
+      </table> 
+    </div>
+
+    </div>
+  </div>
